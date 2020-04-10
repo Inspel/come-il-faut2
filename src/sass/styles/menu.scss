@@ -43,6 +43,7 @@
     -webkit-overflow-scrolling: auto;
     padding-top: $padding-mobile;
     padding-bottom: 5px;
+    margin-bottom: 0;
 
     &::-webkit-scrollbar {
       -webkit-appearance: none;
