@@ -1,10 +1,15 @@
 .card {
   display: flex;
   flex-direction: column;
-  .media {
-    overflow: hidden;
-    margin: 0!important;
-  }
+}
+
+.media {
+  overflow: hidden;
+  margin: 0!important;
+}
+
+.media-content {
+  overflow: hidden;
 }
 
 .card-content {
@@ -36,11 +41,6 @@
   }
 
   .card__title {
-    margin: 0;
-  }
-
-
-  .card .card-content .media {
     margin: 0;
   }
 }

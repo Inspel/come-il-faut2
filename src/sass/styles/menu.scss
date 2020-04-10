@@ -4,6 +4,10 @@
   padding-left: 0.75rem;
 }
 
+.menu-list {
+  margin-bottom: 2em;
+}
+
 .menu-list__item {
   margin-bottom: 0.75rem;
 }
@@ -14,19 +18,13 @@
 
 .menu__phone-link {
   text-align: center;
-  & .underlined-link {
-    &:after {
-      background-color: $blue;
-    }
+  .button {
+    color: white;
+    background-color: #981C21;
+    opacity: 0.8;
     &:hover, &:focus {
-      color: $blue;
-      &:after {
-        background-color: $blue;
-      }
+      opacity: 1;
     }
-  }
-  & span {
-    display: block;
   }
 }
 
