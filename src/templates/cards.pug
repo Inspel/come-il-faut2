@@ -1,0 +1,17 @@
+mixin cards(categoryId, dishesData)
+    ul.columns.is-multiline.cards__list(data-category=categoryId)
+        each dish in dishesData
+            - const { id, label, weight, price } = dish
+            li.card.column
+                .card-image
+                    figure.image.is-4by3
+                        img(src=`static/menu/${categoryId}/${id}.jpg`, alt=label)
+                .card-content
+                    .media
+                        .media-content
+                            h3.title.is-4 #{label}
+                    .content
+                        p.card__weight #{weight} г.
+                        p.card__price.is-5 #{price} ₽
+
+

@@ -1,0 +1,41 @@
+.header {
+  top: 0;
+  left: 0;
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: $bg-color;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url("../../src/img/bg-header.jpg");
+  & * {
+    color: $inverse-color;
+  }
+}
+
+.header__heading-logo {
+  margin: 0;
+  font-size: 50px;
+  line-height: 39px;
+  letter-spacing: 0.04em;
+  font-family: "Playfair Display", serif;
+}
+
+.header__phone-link {
+  display: flex;
+  align-items: center;
+  & .underlined-link {
+    &:after {
+      background-color: $inverse-color;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .header {
+    display: block;
+    padding: $padding-mobile;
+    background-size: cover;
+  }
+}

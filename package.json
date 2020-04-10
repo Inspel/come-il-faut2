@@ -1,0 +1,26 @@
+{
+  "name": "comme-il-faut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.pug",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.pug",
+    "build": "parcel build src/index.pug --public-url ./"
+  },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "parcel-plugin-imagemin": "^4.0.1",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "pug": "^2.0.4",
+    "sass": "^1.26.3"
+  },
+  "dependencies": {
+    "bulma": "^0.8.1"
+  }
+}

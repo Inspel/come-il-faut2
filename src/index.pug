@@ -1,0 +1,36 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='Ресторан "Комильфо" в городе Дзержинский. Европейская и восточная кухня. Доставка.')
+        title Кафе Комильфо
+        link(rel='stylesheet', href='sass/styles.sass')
+        link(href='https://ws7r41qs05.execute-api.eu-central-1.amazonaws.com/default/EL_MENU' rel='preconnect')
+    body
+        .main-wrapper.container
+            header.header
+                img.header__logo(src='img/logo.svg' title="Комильфо" alt="Комильфо")
+                p.header__phone-link
+                    a.underlined-link.has-text-white(href='tel:+74994087458') Доставка: +7 499 408 74 58
+            main.main
+                h1.is-hidden Ресторан Комильфо
+                include templates/menu
+                +menu(menuData)
+                .cards
+                    .cards__loader(role="presentation").is-loading
+                        .loader
+                    .cards__container
+            footer.footer
+                .footer__element
+                    a.footer__address.underlined-link.has-text-white(href="https://yandex.ru/maps/21735/dzerzhinsky/?ll=37.839307%2C55.625708&mode=poi&poi%5Bpoint%5D=37.838915%2C55.625964&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1257524423&z=19")
+                        | Дзержинский, ул. Академика Жукова, 31
+                ul.footer__social-list
+                    li.footer__social-item
+                        a.footer__social-link(href="https://www.instagram.com/komilfodzerzhinskiy/")
+                            img(src="img/instagram.svg" alt="Инстаграм")
+                    li.footer__social-item
+                        a.footer__social-link(href="https://vk.com/club68981534")
+                            img(src="img/iconmonstr-vk-1.svg" alt="Группа Вконтакте")
+        include templates/card
+        script(src="js/page-script.js")

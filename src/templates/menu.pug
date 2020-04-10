@@ -1,0 +1,12 @@
+mixin menu(menuData)
+    aside.menu
+        .menu__container
+            p.menu-label Меню ресторана
+            ul.menu-list
+                each category in menuData
+                    li.menu-list__item
+                        button.button.is-light.menu-list__link(type='button' data-category=category.id)
+                            |#{category.label}
+            p.menu__phone-link
+                a.underlined-link(href='tel:+74994087458')
+                    span Сделать заказ

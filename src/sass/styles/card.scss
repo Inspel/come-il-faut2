@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  .media {
+    overflow: hidden;
+    margin: 0!important;
+  }
+}
+
+.card-content {
+  padding: 1rem;
+  min-height: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-image {
+  padding: 0.75rem;
+  height: 100%;
+  .image {
+    background-color: lightgray;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .card {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .card-image {
+    width: 120px;
+    min-width: 120px;
+
+  }
+
+  .card__title {
+    margin: 0;
+  }
+
+
+  .card .card-content .media {
+    margin: 0;
+  }
+}
