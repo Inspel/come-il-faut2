@@ -15,8 +15,15 @@ html(lang='ru')
                     a.underlined-link.has-text-white(href='tel:+74994087458') Доставка: +7 499 408 74 58
             main.main
                 h1.is-hidden Ресторан Комильфо
-                include templates/menu
-                +menu(menuData)
+                aside.menu
+                    .menu__container
+                        .menu__label
+                            p.menu-label Меню ресторана
+                            .menu__loader.loader.is-loading
+                        ul.menu-list
+                        p.menu__phone-link
+                            a.button(href='tel:+74994087458')
+                                span Сделать заказ
                 .cards
                     .cards__loader(role="presentation").is-loading
                         .loader
@@ -32,5 +39,6 @@ html(lang='ru')
                     li.footer__social-item
                         a.footer__social-link(href="https://vk.com/club68981534")
                             img(src="img/iconmonstr-vk-1.svg" alt="Группа Вконтакте")
+        include templates/categories-button
         include templates/card
         script(src="js/page-script.js")

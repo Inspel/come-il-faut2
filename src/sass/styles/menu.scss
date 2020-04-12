@@ -4,6 +4,20 @@
   padding-left: 0.75rem;
 }
 
+.menu__loader  {
+  display: none;
+  &.is-loading {
+    display: block;
+  }
+}
+
+.menu__label {
+  display: flex;
+  .menu-label {
+    margin-right: 1rem;
+  }
+}
+
 .menu-list {
   margin-bottom: 2em;
 }
@@ -37,6 +51,10 @@
     box-shadow: 0 1px 10px 1px rgba(10, 10, 10, 0.2);;
   }
 
+  .menu__label {
+    display: none;
+  }
+
   .menu-list {
     white-space: nowrap;
     overflow-x: scroll;
@@ -68,10 +86,6 @@
     &:last-child {
       padding-right: $padding-mobile;
     }
-  }
-
-  .menu-label {
-    display: none;
   }
 
   .menu__phone-link {

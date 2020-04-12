@@ -2,6 +2,9 @@
 
 const cardTemplate = document.querySelector('#template-card').content;
 const cardsNode = document.querySelector('.cards__container');
+const categoriesItemTemplate = document.querySelector('#template-categories-button').content;
+const categoriesListNode = document.querySelector('.menu-list');
+const menuLoader = document.querySelector('.menu__loader');
 
 function cleanNode(node) {
   while (node.firstChild) {
@@ -49,4 +52,20 @@ export function renderCategory(categoryData, categoryId) {
     cardsList.appendChild(dishCard);
   });
   cardsNode.appendChild(cardsList);
+}
+
+function renderCategoryButton(category) {
+  const categoriesItemNode = categoriesItemTemplate.cloneNode(true);
+  const button = categoriesItemNode.querySelector('.menu-list__link');
+  button.textContent = category;
+  button.dataset['category'] = category;
+  return categoriesItemNode;
+}
+
+export function renderCategoriesList(categoriesList) {
+  categoriesList.forEach(category => {
+    const categoryButton = renderCategoryButton(category);
+    categoriesListNode.appendChild(categoryButton);
+  });
+  menuLoader.classList.remove('is-loading');
 }
