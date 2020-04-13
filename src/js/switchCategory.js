@@ -4,8 +4,7 @@ import { cleanCards, renderCategory, renderErrorNode } from './render';
 
 const ACTIVE_CLASS = 'is-active';
 
-
-const cardsLoader = document.querySelector('.cards__loader ');
+const cardsLoader = document.querySelector('.cards__loader');
 
 let activeCategory;
 let menuLinks;
@@ -20,14 +19,24 @@ function setActiveItem(categoryId) {
 
 async function switchCategory(categoryId) {
   if (categoryId !== activeCategory) {
+    // todo memoization
+    const categoriesButtons = document.querySelectorAll('.menu-list__link');
+    const categoriesButtonsArray = [].slice.call(categoriesButtons);
+
     activeCategory = categoryId;
     setActiveItem(activeCategory);
     cleanCards();
     cardsLoader.classList.add('is-loading');
+    categoriesButtonsArray.forEach(item => {
+      item.setAttribute('disabled', 'disabled');
+    });
     const data = await switchApi(activeCategory);
     cardsLoader.classList.remove('is-loading');
     if (data && (data.length > 0)) {
       renderCategory(data, activeCategory);
+      categoriesButtonsArray.forEach(item => {
+        item.removeAttribute('disabled')
+      });
       let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
       initLazy(lazyImages)
     } else {
@@ -39,6 +48,7 @@ async function switchCategory(categoryId) {
 function menuLinkClickHandler(event) {
   const targetLink = event.target;
   if (targetLink.classList.contains('menu-list__link')) {
+
     const categoryId = targetLink.dataset['category'];
     switchCategory(categoryId);
   }
