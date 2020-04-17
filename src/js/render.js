@@ -22,12 +22,15 @@ function renderCard(dishData, categoryId) {
     label,
     weight,
     price,
+    description,
   } = dishData;
   const cardNode = cardTemplate.cloneNode(true);
   const cardImage = cardNode.querySelector('.card-image figure img');
   cardImage.dataset.src = `menu/${categoryId}/${id}.jpg`;
   const cardTitle = cardNode.querySelector('.card__title');
   cardTitle.textContent = label;
+  const cardDescription = cardNode.querySelector('.card__description');
+  cardDescription.textContent = description;
   const cardWeight = cardNode.querySelector('.card__weight span');
   cardWeight.textContent = weight;
   const cardPrice = cardNode.querySelector('.card__price span');
